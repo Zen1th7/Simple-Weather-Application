@@ -6,7 +6,7 @@ const list = document.querySelector(".ajax-section .cities");
 const bookmarkList = document.querySelector("#bookmark-list");
 
 // API Key - OpenWeatherMap
-const apiKey = "{{ site.api_key }}";
+const apiKey = API_KEY;
 
 // State
 let bookmarks = JSON.parse(localStorage.getItem('weatherBookmarks')) || [];
