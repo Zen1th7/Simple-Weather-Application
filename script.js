@@ -13,17 +13,22 @@ let bookmarks = JSON.parse(localStorage.getItem('weatherBookmarks')) || [];
 
 // Clock Functions
 function updateClock() {
+    console.log("Updating clock"); // Add this line for debugging
     const now = new Date();
     const timeElement = document.getElementById('current-time');
     const dateElement = document.getElementById('current-date');
     
-    timeElement.textContent = now.toLocaleTimeString();
-    dateElement.textContent = now.toLocaleDateString(undefined, {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+    if (timeElement && dateElement) {
+        timeElement.textContent = now.toLocaleTimeString();
+        dateElement.textContent = now.toLocaleDateString(undefined, {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    } else {
+        console.error("Time or date elements not found");
+    }
 }
 
 // Update clock every second
