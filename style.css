@@ -1,0 +1,357 @@
+/* CUSTOM PROPERTIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --bg_main: #0f172a;
+  --bg_secondary: #1e293b;
+  --bg_card: rgba(255, 255, 255, 0.05);
+  --text_light: #f8fafc;
+  --text_med: #94a3b8;
+  --text_dark: #1e293b;
+  --accent: #0ea5e9;
+  --accent_hover: #0284c7;
+  --card_shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --glass_effect: blur(8px);
+  --border_radius: 12px;
+  --transition-speed: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg_main), #1e1b4b);
+  color: var(--text_light);
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* HEADER SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+/* SEARCH FORM
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.top-banner form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.top-banner form input {
+  padding: 15px;
+  font-size: 1rem;
+  width: 300px;
+  border-radius: var(--border_radius);
+  border: 1px solid var(--text_med);
+  background: var(--bg_secondary);
+  color: var(--text_light);
+  transition: border-color var(--transition-speed);
+}
+
+.top-banner form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.top-banner form button {
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border_radius);
+  background: var(--accent);
+  color: var(--text_light);
+  transition: background var(--transition-speed);
+}
+
+.top-banner form button:hover {
+  background: var(--accent_hover);
+}
+
+.top-banner form .msg {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* DATETIME
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.datetime {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#current-time {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+#current-date {
+    font-size: 1.2rem;
+    color: var(--text_med);
+}
+
+/* BOOKMARKS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.bookmarks {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--bg_card);
+    backdrop-filter: var(--glass_effect);
+    border-radius: var(--border_radius);
+    box-shadow: var(--card_shadow);
+}
+
+.bookmarks h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#bookmark-list {
+    list-style: none;
+}
+
+.bookmark-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--bg_secondary);
+    border-radius: var(--border_radius);
+    transition: transform var(--transition-speed);
+}
+
+.bookmark-item:hover {
+    transform: translateX(5px);
+}
+
+.bookmark-name {
+    font-size: 1.1rem;
+    color: var(--text_light);
+}
+
+.bookmark-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.bookmark-actions button {
+    padding: 5px 10px;
+    border-radius: var(--border_radius);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.load-bookmark {
+    background: var(--accent);
+    color: var(--text_light);
+}
+
+.load-bookmark:hover {
+    background: var(--accent_hover);
+}
+
+.remove-bookmark {
+    background: #ef4444;
+    color: var(--text_light);
+}
+
+.remove-bookmark:hover {
+    background: #dc2626;
+}
+
+.bookmark-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: var(--accent);
+    color: var(--text_light);
+    border: none;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.bookmark-btn:hover {
+    background: var(--accent_hover);
+}
+
+/* WEATHER CARDS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.ajax-section {
+  margin: 70px 0 20px;
+}
+
+.ajax-section .cities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.ajax-section .city {
+  position: relative;
+  padding: 40px 20px;
+  border-radius: 24px;
+  background: var(--bg_card);
+  backdrop-filter: var(--glass_effect);
+  box-shadow: var(--card_shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+  list-style: none;
+}
+
+.ajax-section .city:hover {
+  transform: translateY(-5px);
+}
+
+.ajax-section .city-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text_light);
+  margin-bottom: 10px;
+}
+
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: var(--accent);
+  font-size: 0.7em;
+  position: relative;
+  top: -2px;
+}
+
+.ajax-section .city-temp {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text_light);
+  margin: 10px 0;
+}
+
+.ajax-section .city-temp sup {
+  font-size: 0.5em;
+}
+
+.ajax-section figure {
+  margin-top: 20px;
+}
+
+.ajax-section .city-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.ajax-section figcaption {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text_med);
+  margin-top: 10px;
+}
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text_med);
+  margin-top: 40px;
+}
+
+.page-footer a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.page-footer a:hover {
+  color: var(--text_light);
+}
+
+/* RESPONSIVE DESIGN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 1200px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+  }
+  
+  .top-banner form {
+    flex-direction: column;
+  }
+  
+  .top-banner form input,
+  .top-banner form button {
+    width: 100%;
+  }
+  
+  .top-banner form button {
+    margin-top: 10px;
+  }
+  .datetime {
+    margin-bottom: 20px;
+}
+
+  #current-time {
+    font-size: 2rem;
+}
+
+  #current-date {
+    font-size: 1rem;
+}
+
+  .bookmark-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+  .bookmark-actions {
+    width: 100%;
+    justify-content: center;
+}
+
+  .ajax-section .cities {
+    grid-template-columns: 1fr;
+  }
+
+  .ajax-section .city-temp {
+    font-size: 3rem;
+  }
+}

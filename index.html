@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="top-banner">
+        <div class="container">
+            <h1 class="heading">Weather App</h1>
+            
+            <div class="datetime">
+                <div id="current-time">00:00:00</div>
+                <div id="current-date">Loading...</div>
+            </div>
+
+            <form>
+                <input type="text" placeholder="Search for a city" />
+                <button type="submit">SUBMIT</button>
+                <span class="msg"></span>
+            </form>
+
+            <div class="bookmarks">
+                <h3>Bookmarked Cities</h3>
+                <ul id="bookmark-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="ajax-section">
+        <div class="container">
+            <ul class="cities"></ul>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <div class="container">
+            <small>Made with ❤ by <a href="https://zen1th7.github.io/" target="_blank">Andrian Wu</a></small>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
