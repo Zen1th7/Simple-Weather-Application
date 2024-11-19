@@ -6,7 +6,12 @@ const list = document.querySelector(".ajax-section .cities");
 const bookmarkList = document.querySelector("#bookmark-list");
 
 // API Key - OpenWeatherMap
-const apiKey = API_KEY;
+const apiKey = process.env.API_KEY || '';
+
+if (!apiKey) {
+    console.error('API key not found! Please ensure environment variables are properly configured.');
+    msg.textContent = "Weather service currently unavailable. Please try again later.";
+}
 
 // State
 let bookmarks = JSON.parse(localStorage.getItem('weatherBookmarks')) || [];
@@ -92,6 +97,11 @@ function renderBookmarks() {
 
 // Weather Functions
 async function fetchWeather(inputVal) {
+    if (!apiKey) {
+        msg.textContent = "Weather service currently unavailable. Please try again later.";
+        return;
+    }
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
     try {
